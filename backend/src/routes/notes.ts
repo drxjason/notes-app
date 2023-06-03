@@ -1,15 +1,22 @@
 import express from "express"
-import * as NotesController from "../controllers/notes"
+import * as NotesController from "../controllers/notes"; // callback functions
 
 // router instantiation
-const router = express.Router()
+const router = express.Router();
 
-// endpoint for http get request
-router.get("/", NotesController.getNotes)
+// view all notes http get request
+router.get("/", NotesController.getNotes);
 
-router.get("/:noteId", NotesController.getNote)
+// view a note http get request
+router.get("/:noteId", NotesController.getNote);
 
-// endpoint for http post request
-router.post("/", NotesController.createNote)
+// create a note http post request
+router.post("/", NotesController.createNote);
 
-export default router
+// update a note http patch request
+router.patch("/:noteId", NotesController.updateNote);
+
+// delete a note http delete request
+router.delete("/:noteId", NotesController.deleteNote);
+
+export default router;

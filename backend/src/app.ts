@@ -11,7 +11,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // endpoint /api/notes
-app.use("/api/notes", NotesRoutes);
+app.use("/api/notes", NotesRoutes); // collection of endpoints handled @ /api/notes
 
 // non existing endpoint error handling - Middleware
 app.use((req, res, next) => {
